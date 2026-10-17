@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full border-t border-gray-100 mt-auto bg-white">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12 py-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-gray-500">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12 pt-8 pb-24 md:py-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-gray-500">
         {/* Left nav */}
         <nav className="flex items-center gap-5">
           <Link

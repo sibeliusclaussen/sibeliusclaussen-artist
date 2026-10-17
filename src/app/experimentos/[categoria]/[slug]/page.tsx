@@ -34,14 +34,14 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!project) notFound();
 
   return (
-    <div className="flex flex-col items-center px-8 py-16">
+    <div className="flex flex-col items-center px-6 sm:px-8 py-12 md:py-16">
       {/* Title */}
       <div className="text-center mb-8">
-        <h1 className="text-5xl md:text-6xl font-semibold tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight">
           <span className="text-gray-900">{project.title},</span>{" "}
           <span className="text-gray-400">{project.year}</span>
         </h1>
-        <p className="mt-3 text-base text-gray-400">
+        <p className="mt-3 text-sm sm:text-base text-gray-400">
           {project.tags.map((t) => `#${t}`).join(" ")}
         </p>
       </div>

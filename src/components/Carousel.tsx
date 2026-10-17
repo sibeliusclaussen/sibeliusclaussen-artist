@@ -35,27 +35,31 @@ export default function Carousel({ images, title }: CarouselProps) {
         </div>
       </div>
 
-      {/* Prev button */}
-      <button
-        onClick={scrollPrev}
-        aria-label="Anterior"
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-10 w-8 h-8 rounded-full bg-white/80 hover:bg-white shadow flex items-center justify-center transition-all"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
+      {images.length > 1 && (
+        <>
+          {/* Prev button */}
+          <button
+            onClick={scrollPrev}
+            aria-label="Anterior"
+            className="absolute left-3 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-10 w-8 h-8 rounded-full bg-white/85 hover:bg-white shadow flex items-center justify-center transition-all"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
 
-      {/* Next button */}
-      <button
-        onClick={scrollNext}
-        aria-label="Próxima"
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-10 w-8 h-8 rounded-full bg-white/80 hover:bg-white shadow flex items-center justify-center transition-all"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
+          {/* Next button */}
+          <button
+            onClick={scrollNext}
+            aria-label="Próxima"
+            className="absolute right-3 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-10 w-8 h-8 rounded-full bg-white/85 hover:bg-white shadow flex items-center justify-center transition-all"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </>
+      )}
     </div>
   );
 }
