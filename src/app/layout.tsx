@@ -3,6 +3,8 @@ import { Inter, Inconsolata } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { PersonaProvider } from "@/context/PersonaContext";
+import { LocaleProvider } from "@/context/LocaleContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,12 +19,13 @@ const inconsolata = Inconsolata({
 });
 
 export const metadata: Metadata = {
-  title: "Sibelius Claussen",
+  title: "Sibelius Claussen · Principal & Senior Product Designer",
   description:
-    "Multi-artista que vive de experimentação em Teresópolis, RJ. Fotografia, design, arte e palavra.",
+    "14+ years designing digital products from discovery to shipped code across SaaS, Fintech, B2B, and Marketplaces.",
   openGraph: {
-    title: "Sibelius Claussen",
-    description: "Multi-artista que vive de experimentação.",
+    title: "Sibelius Claussen · Product Designer",
+    description:
+      "14+ years designing digital products from discovery to shipped code.",
     url: "https://sibeliusclaussen.com.br",
     siteName: "Sibelius Claussen",
     type: "website",
@@ -35,11 +38,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${inconsolata.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${inconsolata.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased bg-white text-gray-900 min-h-screen flex flex-col relative" suppressHydrationWarning>
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LocaleProvider>
+          <PersonaProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </PersonaProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

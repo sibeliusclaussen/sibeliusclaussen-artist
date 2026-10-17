@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Carousel from "@/components/Carousel";
+import ProjectStory from "@/components/ProjectStory";
 import { projects, getProjectBySlug } from "@/data/projects";
 
 type Props = {
@@ -20,7 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
   return {
     title: `${project.title}, ${project.year} | Sibelius Claussen`,
-    description: `${project.title} — ${project.tags.map((t) => `#${t}`).join(" ")}`,
+    description:
+      project.content?.pt.summary ??
+      `${project.title} — ${project.tags.map((t) => `#${t}`).join(" ")}`,
   };
 }
 
@@ -47,6 +50,9 @@ export default async function ProjectDetailPage({ params }: Props) {
       <div className="w-full max-w-2xl">
         <Carousel images={project.images} title={project.title} />
       </div>
+
+      {/* Story / Description (if present) */}
+      <ProjectStory project={project} />
     </div>
   );
 }

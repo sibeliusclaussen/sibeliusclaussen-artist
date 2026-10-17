@@ -47,7 +47,7 @@ export default function ExperimentosPage() {
 
       {/* ─── Experimentos em grid ─────────────────────────────────── */}
       <section className="px-8 pb-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           {section2.map((project) => (
             <ProjectCard key={project.slug} project={project} layout="horizontal" />
           ))}

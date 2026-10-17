@@ -1,0 +1,156 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useLocale, UI_TEXT } from "@/context/LocaleContext";
+
+export default function SobreClient() {
+  const { locale } = useLocale();
+  const t = UI_TEXT[locale].about;
+
+  return (
+    <div className="w-full py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-20 items-start">
+          {/* Left — portrait & info */}
+          <aside className="md:col-span-5 flex flex-col gap-8">
+            <div className="relative w-full aspect-square md:aspect-[4/5] overflow-hidden bg-gray-100">
+              <Image
+                src="/images/retrato.jpg"
+                alt="Sibelius Claussen"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                priority
+              />
+            </div>
+
+            <div className="flex flex-col gap-5 text-xs text-gray-500 pt-2 border-t border-gray-100">
+              <div>
+                <p className="font-mono text-gray-400 uppercase tracking-wider text-[11px]">
+                  {t.locationLabel}
+                </p>
+                <p className="text-gray-900 mt-1 text-sm font-medium">
+                  {t.locationValue}
+                </p>
+              </div>
+              <div>
+                <p className="font-mono text-gray-400 uppercase tracking-wider text-[11px]">
+                  {t.roleLabel}
+                </p>
+                <p className="text-gray-900 mt-1 text-sm font-medium">
+                  {t.roleValue}
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">{t.roleSub}</p>
+              </div>
+              <div>
+                <p className="font-mono text-gray-400 uppercase tracking-wider text-[11px]">
+                  {t.educationLabel}
+                </p>
+                <p className="text-gray-900 mt-1 text-sm font-medium">
+                  {t.educationValue}
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">{t.educationSub1}</p>
+                <p className="text-gray-500 text-xs mt-0.5">{t.educationSub2}</p>
+              </div>
+              <div>
+                <p className="font-mono text-gray-400 uppercase tracking-wider text-[11px]">
+                  {t.languagesLabel}
+                </p>
+                <p className="text-gray-900 mt-1 text-sm font-medium">
+                  {t.languagesValue}
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">{t.languagesSub}</p>
+              </div>
+              <div>
+                <p className="font-mono text-gray-400 uppercase tracking-wider text-[11px]">
+                  {t.awardsLabel}
+                </p>
+                <p className="text-gray-900 mt-1 text-sm font-medium">
+                  {t.awardsValue}
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">{t.awardsSub}</p>
+              </div>
+              <div className="flex flex-col gap-2 pt-4 border-t border-gray-100">
+                <a
+                  href="mailto:contact@sibeliusclaussen.com"
+                  className="text-gray-900 hover:text-gray-500 font-medium transition-colors inline-flex items-center justify-between py-0.5"
+                >
+                  <span>contact@sibeliusclaussen.com</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/sibeliusclaussen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center justify-between py-0.5"
+                >
+                  <span>LinkedIn</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://www.figma.com/deck/IiCwf07g7U5hNEsfYYK6Hg/SibeliusClaussenPortfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center justify-between py-0.5"
+                >
+                  <span>{t.deckLink}</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="/Sibelius-Claussen-Resume.pdf"
+                  download="Sibelius-Claussen-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center justify-between py-0.5"
+                >
+                  <span>{t.resumeLink}</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          {/* Right — narrative */}
+          <main className="md:col-span-7 flex flex-col gap-8">
+            <h1 className="text-4xl sm:text-5xl font-semibold leading-[1.15] tracking-tight">
+              <span className="block text-gray-900">{t.titleMain}</span>
+              <span className="block text-gray-400">{t.titleMuted}</span>
+            </h1>
+
+            <div className="space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed">
+              <p>{t.p1}</p>
+
+              <p>{t.p2}</p>
+
+              <blockquote className="border-l-2 border-gray-900 pl-6 py-2 my-4 text-gray-800 italic leading-relaxed">
+                {t.quote}
+              </blockquote>
+
+              <p>{t.p3}</p>
+
+              <p className="text-gray-800 font-medium pt-2">{t.closing}</p>
+            </div>
+
+            <div className="pt-8 border-t border-gray-100 flex flex-wrap items-center gap-8 text-sm">
+              <Link
+                href="/?mode=product"
+                className="text-gray-900 hover:text-gray-500 font-medium transition-colors inline-flex items-center gap-1.5"
+              >
+                <span>{t.ctaCases}</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                href="/?mode=artist"
+                className="text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1.5"
+              >
+                <span>{t.ctaArt}</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  );
+}
