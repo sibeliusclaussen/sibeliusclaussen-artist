@@ -153,6 +153,15 @@ export default function SobreClient() {
                   <span>LinkedIn</span>
                   <span aria-hidden="true">↗</span>
                 </a>
+                <a
+                  href="https://github.com/sibeliusclaussen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center justify-between py-0.5"
+                >
+                  <span>GitHub</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
                 {isProduct && (
                   <>
                     <a

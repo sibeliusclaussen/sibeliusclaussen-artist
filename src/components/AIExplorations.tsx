@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { getAIExplorations } from "@/data/cases";
 import { useLocale, UI_TEXT } from "@/context/LocaleContext";
+import GitHubContributions from "./GitHubContributions";
 
 export default function AIExplorations() {
   const { locale } = useLocale();
@@ -74,6 +75,8 @@ export default function AIExplorations() {
             );
           })}
         </div>
+
+        <GitHubContributions />
       </div>
     </section>
   );

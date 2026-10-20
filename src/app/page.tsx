@@ -11,6 +11,7 @@ import CaseCard from "@/components/CaseCard";
 import CompanyLogos from "@/components/CompanyLogos";
 import AIExplorations from "@/components/AIExplorations";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import HeroHeatmapBackground from "@/components/HeroHeatmapBackground";
 
 const ARTIST_COPY = {
   pt: {
@@ -90,43 +91,56 @@ export default function HomePage() {
                     {t.hero.subtitle}
                   </p>
 
-                  {/* Recruiter Quick Actions */}
-                  <div className="flex flex-wrap items-center gap-6 mt-8 pt-6 border-t border-gray-100 text-xs sm:text-sm">
-                    <a
-                      href="mailto:contact@sibeliusclaussen.com"
-                      className="text-gray-950 font-medium hover:text-gray-600 transition-colors inline-flex items-center gap-1.5"
-                    >
-                      <span>contact@sibeliusclaussen.com</span>
-                      <span aria-hidden="true">↗</span>
-                    </a>
-                    <a
-                      href="https://linkedin.com/in/sibeliusclaussen"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center gap-1.5"
-                    >
-                      <span>LinkedIn</span>
-                      <span aria-hidden="true">↗</span>
-                    </a>
-                    <a
-                      href="https://www.figma.com/deck/IiCwf07g7U5hNEsfYYK6Hg/SibeliusClaussenPortfolio"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center gap-1.5"
-                    >
-                      <span>{t.hero.deck}</span>
-                      <span aria-hidden="true">↗</span>
-                    </a>
-                    <a
-                      href="/Sibelius-Claussen-Resume.pdf"
-                      download="Sibelius-Claussen-Resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center gap-1.5"
-                    >
-                      <span>{t.hero.resume}</span>
-                      <span aria-hidden="true">↓</span>
-                    </a>
+                  {/* Recruiter Quick Actions + Hidden Game Mode Easter Egg */}
+                  <div className="flex flex-wrap items-center justify-between gap-6 mt-8 pt-6 border-t border-gray-100 text-xs sm:text-sm">
+                    <div className="flex flex-wrap items-center gap-6">
+                      <a
+                        href="mailto:contact@sibeliusclaussen.com"
+                        className="text-gray-950 font-medium hover:text-gray-600 transition-colors inline-flex items-center gap-1.5"
+                      >
+                        <span>contact@sibeliusclaussen.com</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                      <a
+                        href="https://linkedin.com/in/sibeliusclaussen"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center gap-1.5"
+                      >
+                        <span>LinkedIn</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                      <a
+                        href="https://github.com/sibeliusclaussen"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center gap-1.5"
+                      >
+                        <span>GitHub</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                      <a
+                        href="https://www.figma.com/deck/IiCwf07g7U5hNEsfYYK6Hg/SibeliusClaussenPortfolio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center gap-1.5"
+                      >
+                        <span>{t.hero.deck}</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                      <a
+                        href="/Sibelius-Claussen-Resume.pdf"
+                        download="Sibelius-Claussen-Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-gray-950 transition-colors inline-flex items-center gap-1.5"
+                      >
+                        <span>{t.hero.resume}</span>
+                        <span aria-hidden="true">↓</span>
+                      </a>
+                    </div>
+
+                    <HeroHeatmapBackground />
                   </div>
                 </div>
               </div>
@@ -185,6 +199,15 @@ export default function HomePage() {
                       className="hover:text-gray-900 transition-colors"
                     >
                       LinkedIn
+                    </a>
+                    <span aria-hidden="true">·</span>
+                    <a
+                      href="https://github.com/sibeliusclaussen"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gray-900 transition-colors"
+                    >
+                      GitHub
                     </a>
                     <span aria-hidden="true">·</span>
                     <a

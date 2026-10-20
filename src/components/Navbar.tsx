@@ -6,6 +6,7 @@ import { useLocale, UI_TEXT, Locale } from "@/context/LocaleContext";
 
 const SOCIAL_LINKS = [
   { label: "LinkedIn", href: "https://linkedin.com/in/sibeliusclaussen" },
+  { label: "GitHub", href: "https://github.com/sibeliusclaussen" },
   { label: "Instagram", href: "https://instagram.com/sibeliusclaussen" },
   { label: "Substack", href: "https://sibeliusclaussen.substack.com" },
 ];
